@@ -173,70 +173,77 @@
       </section>
 
 
-      <!-- Image Gallery - Carousel -->
+      <!-- Image Gallery - Unified Carousel -->
       <section class="hub-section">
         <div class="section-header">
           <h2 class="section-title">Guides in Action</h2>
         </div>
-        <div class="img-gallery-carousel">
-
-          <!-- FH6 -->
-          <div class="gallery-game-col fh6-col">
-            <div class="gallery-game-label dot-fh6"><span class="dot" style="background:#e63946"></span>Forza Horizon 6</div>
-            <div class="gallery-scroll" id="gallery-fh6">
-              <a href="https://fh6.savebook.net/pages/guides/track-guide.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
+        <div class="unified-carousel">
+          <div class="carousel-track" id="carousel-track">
+            <div class="carousel-item" data-game="fh6">
+              <a href="https://fh6.savebook.net/pages/guides/track-guide.html" target="_blank" rel="noopener noreferrer">
                 <img src="images/city.jpg" alt="Forza Horizon 6 Japan" loading="lazy">
-                <div class="gallery-caption">Forza Horizon 6 · Japan</div>
-              </a>
-              <a href="https://fh6.savebook.net/pages/guides/track-guide.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
-                <img src="images/shanlu.jpg" alt="Touge Roads" loading="lazy">
-                <div class="gallery-caption">Touge Mountain Roads</div>
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#e63946">Forza Horizon 6</span>
+                  Japan Racing
+                </div>
               </a>
             </div>
-            <div class="gallery-dots">
-              <span class="gallery-dot active" data-gallery="gallery-fh6" data-index="0"></span>
-              <span class="gallery-dot" data-gallery="gallery-fh6" data-index="1"></span>
-            </div>
-          </div>
-
-          <!-- Disco -->
-          <div class="gallery-game-col disco-col">
-            <div class="gallery-game-label dot-disco"><span class="dot" style="background:#ff2d78"></span>Dead As Disco</div>
-            <div class="gallery-scroll" id="gallery-disco">
-              <a href="https://disco.savebook.net/pages/guides/walkthrough.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
+            <div class="carousel-item" data-game="disco">
+              <a href="https://disco.savebook.net/pages/guides/walkthrough.html" target="_blank" rel="noopener noreferrer">
                 <img src="images/story-screenshot.jpg" alt="Dead As Disco Story" loading="lazy">
-                <div class="gallery-caption">Dead As Disco — Story Mode</div>
-              </a>
-              <a href="https://disco.savebook.net/pages/guides/characters.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
-                <img src="images/char-select.jpg" alt="Characters" loading="lazy">
-                <div class="gallery-caption">Characters &amp; Bosses</div>
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#ff2d78">Dead As Disco</span>
+                  Story Mode
+                </div>
               </a>
             </div>
-            <div class="gallery-dots">
-              <span class="gallery-dot active" data-gallery="gallery-disco" data-index="0"></span>
-              <span class="gallery-dot" data-gallery="gallery-disco" data-index="1"></span>
-            </div>
-          </div>
-
-          <!-- Subnautica 2 -->
-          <div class="gallery-game-col s2-col">
-            <div class="gallery-game-label dot-s2"><span class="dot" style="background:#00d4aa"></span>Subnautica 2</div>
-            <div class="gallery-scroll" id="gallery-s2">
-              <a href="https://subnautica2.savebook.net/pages/guides/biome-guide.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
-                <img src="images/subnautica2-ss1.jpg" alt="Subnautica 2 Biome" loading="lazy">
-                <div class="gallery-caption">Subnautica 2 — Deep Ocean</div>
+            <div class="carousel-item" data-game="s2">
+              <a href="https://subnautica2.savebook.net/pages/guides/biome-guide.html" target="_blank" rel="noopener noreferrer">
+                <img src="images/subnautica2-ss1.jpg" alt="Subnautica 2 Deep Ocean" loading="lazy">
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#00d4aa">Subnautica 2</span>
+                  Deep Ocean
+                </div>
               </a>
-              <a href="https://subnautica2.savebook.net/pages/guides/creature-bestiary.html" target="_blank" rel="noopener noreferrer" class="gallery-img-wrap">
+            </div>
+            <div class="carousel-item" data-game="fh6">
+              <a href="https://fh6.savebook.net/pages/guides/track-guide.html" target="_blank" rel="noopener noreferrer">
+                <img src="images/shanlu.jpg" alt="Forza Horizon 6 Touge Roads" loading="lazy">
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#e63946">Forza Horizon 6</span>
+                  Touge Roads
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item" data-game="disco">
+              <a href="https://disco.savebook.net/pages/guides/characters.html" target="_blank" rel="noopener noreferrer">
+                <img src="images/char-select.jpg" alt="Dead As Disco Characters" loading="lazy">
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#ff2d78">Dead As Disco</span>
+                  Characters &amp; Bosses
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item" data-game="s2">
+              <a href="https://subnautica2.savebook.net/pages/guides/creature-bestiary.html" target="_blank" rel="noopener noreferrer">
                 <img src="images/subnautica2-ss2.jpg" alt="Subnautica 2 Creatures" loading="lazy">
-                <div class="gallery-caption">Subnautica 2 — 51+ Creatures</div>
+                <div class="carousel-caption">
+                  <span class="carousel-game-label" style="--game-color:#00d4aa">Subnautica 2</span>
+                  51+ Creatures
+                </div>
               </a>
             </div>
-            <div class="gallery-dots">
-              <span class="gallery-dot active" data-gallery="gallery-s2" data-index="0"></span>
-              <span class="gallery-dot" data-gallery="gallery-s2" data-index="1"></span>
-            </div>
           </div>
-
+          <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev" id="carousel-prev" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="carousel-dots" id="carousel-dots"></div>
+            <button class="carousel-btn carousel-next" id="carousel-next" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
         </div>
       </section>
 
