@@ -58,7 +58,7 @@ img{max-width:100%;display:block}
 .btn-ghost:hover{border-color:var(--text-muted);color:var(--text)}
 .hero-right{flex:1;display:flex;justify-content:flex-end}
 .hero-cards-stack{position:relative;width:340px;height:260px}
-.hero-card{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;width:240px;overflow:hidden;transition:transform 200ms}
+.hero-card{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;width:240px;overflow:hidden;transition:transform 200ms;text-decoration:none;display:block}
 .hero-card--1{top:0;left:0;z-index:3;transform:rotate(-2deg)}
 .hero-card--2{top:20px;left:70px;z-index:2;transform:rotate(1.5deg)}
 
