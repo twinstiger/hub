@@ -56,16 +56,96 @@ img{max-width:100%;display:block}
 .btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
 .btn-ghost{display:inline-flex;align-items:center;padding:0.7rem 1.5rem;background:transparent;color:var(--text);font-weight:600;font-size:0.875rem;border-radius:9999px;border:1.5px solid var(--border);transition:var(--transition)}
 .btn-ghost:hover{border-color:var(--text-muted);color:var(--text)}
-.hero-right{flex:1;display:flex;justify-content:flex-end}
-.hero-cards-stack{position:relative;width:340px;height:260px}
-.hero-card{position:absolute;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:0;width:240px;overflow:hidden;transition:transform 200ms;text-decoration:none;display:block}
-.hero-card--1{top:0;left:0;z-index:3;transform:rotate(-2deg)}
-.hero-card--2{top:20px;left:70px;z-index:2;transform:rotate(1.5deg)}
+/* ===== FAN CARD (扇形卡片) ===== */
+.hero-fan {
+  position: relative;
+  width: 380px;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
 
-.hero-card:hover{z-index:10;transform:rotate(0) scale(1.03)}
-.hc-tag{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);background:rgba(255,45,120,0.1);border:1px solid rgba(255,45,120,0.2);padding:0.2rem 0.5rem;border-radius:9999px;margin-bottom:0.375rem}
-.hc-title{font-family:var(--font-heading);font-size:1rem;font-weight:800;margin-bottom:0.25rem}
-.hc-desc{font-size:0.78rem;color:var(--text-muted)}
+.fan-card {
+  position: absolute;
+  width: 180px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, z-index 0s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.fan-card:hover {
+  z-index: 10;
+}
+
+.fan-card--1 {
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom center;
+  transform: rotate(-18deg) translateY(20px);
+  z-index: 3;
+}
+
+.fan-card--2 {
+  bottom: 0;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg) translateY(20px);
+  z-index: 4;
+}
+
+.fan-card--3 {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom center;
+  transform: rotate(18deg) translateY(20px);
+  z-index: 3;
+}
+
+/* Hover: 展开扇形 */
+.hero-fan:hover .fan-card--1 {
+  transform: rotate(-32deg) translateY(-20px) translateX(-20px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.hero-fan:hover .fan-card--2 {
+  transform: translateX(-50%) rotate(0deg) translateY(-30px) scale(1.05);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.55);
+}
+
+.hero-fan:hover .fan-card--3 {
+  transform: rotate(32deg) translateY(-20px) translateX(20px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+/* Idle animation: 轻微摇动 */
+@keyframes fan-idle {
+  0%, 100% { transform: rotate(-18deg) translateY(20px); }
+  50% { transform: rotate(-14deg) translateY(18px); }
+}
+@keyframes fan-idle-2 {
+  0%, 100% { transform: translateX(-50%) rotate(0deg) translateY(20px); }
+  50% { transform: translateX(-50%) rotate(0deg) translateY(16px); }
+}
+@keyframes fan-idle-3 {
+  0%, 100% { transform: rotate(18deg) translateY(20px); }
+  50% { transform: rotate(14deg) translateY(18px); }
+}
+
+.hero-fan:not(:hover) .fan-card--1 {
+  animation: fan-idle 4s ease-in-out infinite;
+}
+.hero-fan:not(:hover) .fan-card--2 {
+  animation: fan-idle-2 4s ease-in-out infinite;
+}
+.hero-fan:not(:hover) .fan-card--3 {
+  animation: fan-idle-3 4s ease-in-out infinite;
+}
 
 /* ===== STATS BAR ===== */
 .hub-stats{display:flex;gap:0;max-width:1100px;margin:0 auto 3rem;padding:0 1.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-card)}
@@ -167,6 +247,11 @@ img{max-width:100%;display:block}
   .gallery-game-col:last-child{display:flex}
 }
 
+.fan-card--1 .hc-tag { color: #e63946; background: rgba(230,57,70,0.1); border: 1px solid rgba(230,57,70,0.2); }
+.fan-card--2 .hc-tag { color: #ff2d78; background: rgba(255,45,120,0.1); border: 1px solid rgba(255,45,120,0.2); }
+.fan-card--3 .hc-tag { color: #00d4aa; background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.2); }
+.hc-title{font-family:var(--font-heading);font-size:1rem;font-weight:800;margin-bottom:0.25rem}
+.hc-desc{font-size:0.78rem;color:var(--text-muted)}
 .hc-img{width:100%;height:120px;object-fit:cover;display:block}
 .hc-body{padding:0.875rem 1rem}
 
