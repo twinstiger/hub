@@ -91,6 +91,8 @@ img{max-width:100%;display:block}
 .gc-visual--fh6{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
 .gc-visual--dad{background:linear-gradient(135deg,#1a0015 0%,#2d0040 50%,#0a0015 100%)}
 .gc-visual--empty{background:var(--bg-secondary);display:flex;align-items:center;justify-content:center}
+.gc-visual--s2{background:linear-gradient(135deg,#0a1628 0%,#0f2a4a 50%,#0a1628 100%)}
+.gc-badge--s2{color:#00d4aa;background:rgba(0,212,170,0.1);border-color:rgba(0,212,170,0.25)}
 
 .gc-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .gc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 60%,transparent 100%);z-index:1}
