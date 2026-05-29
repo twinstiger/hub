@@ -65,3 +65,9 @@ logs/
 # Editor directories
 .cache/
 .history/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
