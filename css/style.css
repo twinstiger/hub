@@ -389,6 +389,9 @@ img{max-width:100%;display:block}
   .stat-num{font-size:1.25rem}
   .game-grid{grid-template-columns:1fr}
   .hub-stats{flex-wrap:wrap}
+  .wiki-flow{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr}
+  .wiki-news-grid{grid-template-columns:1fr}
   .nav-desktop{display:none}
   .hamburger{display:flex}
   .nav-mobile{display:none;position:fixed;top:65px;left:0;right:0;bottom:0;background:var(--bg);z-index:99;overflow-y:auto}
@@ -408,7 +411,129 @@ img{max-width:100%;display:block}
   .carousel-item{ flex: 0 0 calc(100% - 0.75rem); }
 }
 
-/* .hc-tag is in .fan-card CSS above */
+/* ===== WIKI FLOW STEPS (4-col step cards) ===== */
+.wiki-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+.wiki-flow-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: border-color 300ms, transform 300ms;
+}
+.wiki-flow-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.wiki-flow-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  color: #0f0f11;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+.wiki-flow-step--fh6 .wiki-flow-num { background: var(--accent-fh6); }
+.wiki-flow-step--dad .wiki-flow-num { background: var(--accent-disco); }
+.wiki-flow-step--s2 .wiki-flow-num { background: var(--accent-s2); }
+.wiki-flow-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+}
+.wiki-flow-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ===== INFO CARD GRID (3-col feature cards) ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: border-color 300ms, transform 200ms;
+  border-left: 3px solid var(--accent);
+}
+.info-card:hover { transform: translateY(-3px); border-color: var(--accent); border-left-color: var(--accent); }
+.info-card--fh6 { border-left-color: var(--accent-fh6); }
+.info-card--dad { border-left-color: var(--accent-disco); }
+.info-card--s2 { border-left-color: var(--accent-s2); }
+.info-card__icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.info-card__title { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.375rem; }
+.info-card__desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+/* ===== WIKI HERO STATS (horizontal stat row) ===== */
+.wiki-hero-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.wiki-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1.25rem;
+  text-align: center;
+  min-width: 100px;
+  transition: border-color 200ms, transform 200ms;
+}
+.wiki-stat:hover { border-color: var(--accent); transform: translateY(-2px); }
+.wiki-stat-num { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+.wiki-stat--fh6 .wiki-stat-num { color: var(--accent-fh6); }
+.wiki-stat--dad .wiki-stat-num { color: var(--accent-disco); }
+.wiki-stat--s2 .wiki-stat-num { color: var(--accent-s2); }
+.wiki-stat-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.125rem; }
+
+/* ===== WIKI NEWS CARD (date+title list) ===== */
+.wiki-news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.wiki-news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: border-color 300ms, transform 200ms;
+  text-decoration: none;
+}
+.wiki-news-card:hover { border-color: var(--accent); transform: translateX(4px); }
+.wiki-news-date { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.wiki-news-game {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  width: fit-content;
+  margin-bottom: 0.25rem;
+}
+.wiki-news-game--fh6 { background: rgba(230,57,70,0.15); color: #e63946; border: 1px solid rgba(230,57,70,0.3); }
+.wiki-news-game--dad { background: rgba(255,45,120,0.15); color: #ff2d78; border: 1px solid rgba(255,45,120,0.3); }
+.wiki-news-game--s2 { background: rgba(0,212,170,0.15); color: #00d4aa; border: 1px solid rgba(0,212,170,0.3); }
+.wiki-news-title { font-family: var(--font-heading); font-size: 0.825rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+.wiki-news-card:hover .wiki-news-title { color: var(--accent); }
+.wiki-news-arrow { color: var(--text-muted); margin-left: auto; flex-shrink: 0; transition: transform 200ms, color 200ms; }
+.wiki-news-card:hover .wiki-news-arrow { transform: translateX(3px); color: var(--accent); }
 
 /* ===== TILT 3D EFFECT (applied via JS) ===== */
 .tilt-3d{transform-style:preserve-3d;transition:transform 100ms linear}

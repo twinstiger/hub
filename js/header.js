@@ -188,8 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
         track.scrollTo({ left: items[currentIndex].offsetLeft - track.offsetLeft, behavior: 'smooth' });
         updateDots();
 
+        // Add transition class to new item for fade+zoom in
+        newItem.classList.add('transitioning');
+
         setTimeout(function() {
           oldItem.classList.remove('transitioning');
+          newItem.classList.remove('transitioning');
           isTransitioning = false;
         }, 400);
       }, 200);
